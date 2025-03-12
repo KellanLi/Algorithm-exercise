@@ -1,0 +1,9 @@
+{
+    "cSpell.words": [
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "eslint.format.enable": true, // 可选：启用 ESLint 格式化
+    "editor.wordWrap": "on", // 启用换行
+}
