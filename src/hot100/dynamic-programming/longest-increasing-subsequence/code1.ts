@@ -4,14 +4,15 @@ function lengthOfLIS(nums: number[]): number {
     if (index === 0) return;
 
     let curIndex = index - 1;
-    while (curIndex >= 0 && nums[curIndex] >= value) curIndex--;
-
-    if (curIndex < 0) {
-      dp[index] = 1;
-      return;
+    let maxLength = 1;
+    while (curIndex >= 0) {
+      if (nums[curIndex] < value) {
+        maxLength = Math.max(dp[curIndex] + 1, maxLength);
+      }
+      curIndex--;
     }
 
-    dp[index] = dp[curIndex] + 1;
+    dp[index] = maxLength;
   });
 
   return Math.max(...dp);
