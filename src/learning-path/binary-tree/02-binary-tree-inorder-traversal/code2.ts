@@ -6,13 +6,13 @@
 function inorderTraversal(root: TreeNode | null): number[] {
   if (root == null) return [];
   const res: number[] = [];
-  const stack: TreeNode[] = [];
+  const stack: (TreeNode | null)[] = [];
 
   stack.push(root);
   while (stack.length > 0) {
-    const node = stack.pop();
+    const node = stack.pop()!;
     if (node === null) {
-      const readyNode = stack.pop();
+      const readyNode = stack.pop()!;
       res.push(readyNode.val);
       continue;
     }
