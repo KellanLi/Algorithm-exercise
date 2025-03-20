@@ -3,18 +3,20 @@
  */
 
 const serveAdd = (a: number, b: number) => {
-  return new Promise<number>((resolve) => setTimeout(() => {
-    resolve(a + b);
-  }, 500));
-}
+  return new Promise<number>((resolve) =>
+    setTimeout(() => {
+      resolve(a + b);
+    }, 500),
+  );
+};
 
 const add = async (...nums: number[]): Promise<number> => {
   let res = [...nums];
   let res2: (number | Promise<number>)[] = [];
-  while(res.length > 1) {
-    for(let i = 0; i < res.length/2; i++) {
+  while (res.length > 1) {
+    for (let i = 0; i < res.length / 2; i++) {
       const mapI = res.length - 1 - i;
-      if(mapI === i) {
+      if (mapI === i) {
         res2.push(res[i]);
         break;
       }
@@ -23,17 +25,17 @@ const add = async (...nums: number[]): Promise<number> => {
     }
 
     res = await Promise.all(res2);
-    res2 = []
+    res2 = [];
   }
 
   return res[0];
-}
+};
 
 const main = async () => {
-  console.log(await add(1,2,3,4,5));
+  console.log(await add(1, 2, 3, 4, 5));
   console.log(await add(-1, 23, 56, 77));
-}
+};
 
 main();
 
-export {}
+export {};

@@ -10,7 +10,7 @@ function preorderTraversal(root: TreeNode | null): number[] {
   stack.push(root);
 
   while (stack.length > 0) {
-    const node = stack.pop();
+    const node = stack.pop()!;
     res.push(node.val);
 
     if (node.right) stack.push(node.right);
