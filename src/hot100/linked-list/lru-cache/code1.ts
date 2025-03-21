@@ -27,10 +27,12 @@ class LRUCache {
     }
 
     const iterator = this.cache.keys();
-    this.cache.delete(iterator.next().value);
+    this.cache.delete(iterator.next().value!);
     this.cache.set(key, value);
   }
 }
+
+export {};
 
 // 解释
 // LRUCache lRUCache = new LRUCache(2);

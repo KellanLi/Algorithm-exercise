@@ -1,3 +1,7 @@
+/**
+ * 429.N叉树的层序遍历
+ */
+
 function levelOrder(root: _Node | null): number[][] {
   const res: number[][] = [];
   if (root === null) return [];
