@@ -53,6 +53,7 @@ function spiralOrder(matrix: number[][]): number[] {
     toDown();
     toLeft();
     toUp();
+    break;
   }
 
   return res;
