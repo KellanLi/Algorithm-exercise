@@ -4,11 +4,6 @@ function spiralOrder(matrix: number[][]): number[] {
     .fill(null)
     .map((_, index) => Array(matrix[index].length).fill(0));
 
-  // [
-  //   [1,1,1,1],
-  //   [1,1,1,1],
-  //   [1,1,1,1]
-  // ]
   let point = { i: 0, j: 0 };
   const toRight = () => {
     while (point.j < matrix[point.i].length) {
@@ -58,3 +53,5 @@ function spiralOrder(matrix: number[][]): number[] {
 
   return res;
 }
+
+export {};
