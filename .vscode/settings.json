@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["inorder", "leetcode", "nums", "preorder"],
+  "cSpell.words": ["inorder", "leetcode", "nums", "preorder", "strs"],
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

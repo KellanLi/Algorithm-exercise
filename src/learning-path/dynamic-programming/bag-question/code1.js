@@ -32,10 +32,10 @@ rl.on("close", () => {
   console.log(fn(M, N, space, value));
 });
 
-const fn = (varities, bagSize, space, value) => {
+const fn = (varieties, bagSize, space, value) => {
   const dp = Array(bagSize + 1)
     .fill(null)
-    .map(() => Array(varities + 1).fill(0));
+    .map(() => Array(varieties + 1).fill(0));
   for (let i = 1; i < dp.length; i++) {
     for (let j = 1; j < dp[i].length; j++) {
       const val1 = dp[i][j - 1]; // 如果不携带该材料能获取的最大价值
@@ -44,14 +44,19 @@ const fn = (varities, bagSize, space, value) => {
           return 0;
         }
 
-        return dp[i - space[j - 1]][j] + value[j - 1];
+        return dp[i - space[j - 1]][j - 1] + value[j - 1];
       })();
       dp[i][j] = Math.max(val1, val2);
     }
   }
-  console.log(dp);
-  return dp[bagSize][varities];
+  // console.log(dp);
+  return dp[bagSize][varieties];
 };
+
+// 测试数据
+// 6 7
+// 2 2 3 1 5 2
+// 2 3 1 5 4 3
 
 [
   [0, 0, 0, 0, 0, 0, 0],
@@ -62,4 +67,20 @@ const fn = (varities, bagSize, space, value) => {
   [0, 4, 6, 6, 25, 25, 25],
   [0, 6, 9, 9, 30, 30, 30],
   [0, 6, 9, 9, 35, 35, 35],
+];
+
+// 测试数据
+// 6 7
+// 2 2 3 1 5 2 space
+// 2 3 1 5 4 3 value
+
+[
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 5, 5, 5],
+  [0, 2, 3, 3, 5, 5, 5],
+  [0, 2, 3, 3, 8, 8, 8],
+  [0, 2, 5, 5, 8, 8, 8],
+  [0, 2, 5, 5, 10, 10, 11],
+  [0, 2, 5, 5, 10, 10, 11],
+  [0, 2, 5, 6, 10, 10, 13],
 ];
