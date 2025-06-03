@@ -1,3 +1,7 @@
+/**
+ * leetcode 题号：455.分发饼干
+ */
+
 function findContentChildren(g: number[], s: number[]): number {
   const GLength = g.length;
   let sCount = s.length - 1;
