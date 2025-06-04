@@ -1,3 +1,7 @@
+/**
+ * leetcode 题号：704.二分查找
+ */
+
 function search(nums: number[], target: number): number {
   const middle = Math.floor((0 + nums.length) / 2);
   let index = middle;
